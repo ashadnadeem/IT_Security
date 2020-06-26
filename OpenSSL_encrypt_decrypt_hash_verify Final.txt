@@ -1,0 +1,52 @@
+
+Ashad:~$ cat private_key.pem
+-----BEGIN RSA PRIVATE KEY-----
+MIIEowIBAAKCAQEAsAmvd2nMjKH2g+dgn2YvF7EcJoNWGrtbtCZUirwHFaxY3WrV
+V73OzaBc0Kek3Fg8cbICuvPNPgSBDKA4T5UOhc9DwDD0TwwBMe01kfSiEIoa3T67
+GzWNFXFYK4dAorLGyv2lpKMoZu6r8wozLfcsx/EgW814di0ntQ+Y6dICKRQBwchf
+e4QXJ6Hi2flvkDiU9KSA3PpNGNklmrQc76IShlGc6Ls7slPSskaMgryZ6Ruzi4ZE
+5zGltZymPRDpTQfAlRuCnQB+N8I6shN3T3ws15cjAJbc01602JSOK640c5d4fyxO
+qqbIwvlIobHTsCcoMn3fjlMBnaRWoE21ffTgYQIDAQABAoIBACx5NfA4NWouHOZ0
+FRAQM8OLhi4gricwwFlB+cfW+v85vHWr4Nw64r1GT0yTne3hCNw8eb4bi/WoE6ZJ
+8BAC+1lI5LfwZjh2MvMXF5qZMDx3d5P/niugmtUY/op4sBaqjdiIvklawwFGOQC8
+yfNJ5/FXdLJctZs9izOODja8TLltnc0FDh8Y2fBonbpz63S3NYZFWqJ3Piq15/O5
+yD5cJjbnatsUe9AqARYj5wXU8aVZqOe8bJIy51YVoV9vCA3xMSxAMnjqidho9Wtj
+Q4Ewz9YpczEJ6MO5Se6lSPuI2D+tadUmBNmzk50J7qFkFveEIwncmgWY2iXue5ef
+WwA1gAUCgYEA6QZuvLXyJ2cMGt1qnJ3ia/cTRlsjhTPyPLiThVMUONMSo+yMuopS
+9c6Eh9xw1XOT/nP5oT8T8lKcBuj8CZ6mTqqTAdM5hgZU0Ots21Dc87Ts94V8+lgd
+zaw0SkrxkTwIS8Vo2QGcg95r5APQG+2msVvCmrjradQKMgTJmrHilasCgYEAwWTj
+7GXwi92NQnkvWWRfP3blvm31A6OXKcwhHk/fjoozZT2QaO7j+fiRzlI3LjKHmF+Y
+kizg7YXmbFG1qxSr9Az94J5IfwUtzmVHFqFONAiPle1ofsY9/G8q2cBU7G+NLBk2
+C+v7m0Sbj6RJhbtPfQIPlWLdtYYWH2E54PIxPiMCgYEAn3obh2MuGvFXQ3uNXype
+r20k792n7Z2jhxL7Qx+ck1dBRpa5qWDJbhiscx7Wyf6Tpm1Qxp4Y1Jrc1Y3WD+9X
++jaa7YDVuXfTzDeTBHXPAastEil1Yw+zNfNIxh+MO81OEC1GmF2V9FnglOhXIQYA
+MxmNkb5EvuSzJZBJOWnMnIkCgYBJ/oMiaOJ/cTZiD6HpLvkufBxtHv8W9Fma+WpW
+gbMEg6Ykf0iojXaWpt+KtHQ+bcDpsPHcQ+WPm6LNIPpESfV8vBfLAGS2jNG43ZE0
+fGVCjV/6uko37zu6QQKBLBCSIiA+lirSpuiuwLJQZEhpLYC9ULOLsbcog/Qk73tI
+sQHcRwKBgETkyGh6IfpoK7stS05CwU9iRo9PqjIPnqvhE6LQrGhbHhujefbkCqUI
+3QkpZ72G/2932SbTf8+X+/05jnZbPLr/NBT2SaXRA2KI2tAowm/vwQN4u3r8xtDH
+U8Xf+BIC4vOMkezlFGu2omdcomLIO4tXy7cg/afDK4jPfYEefLKL
+-----END RSA PRIVATE KEY-----
+Ashad:~$ openssl rsa -in private_key.pem -outform PEM -pubout -out public_key.pem
+writing RSA key
+Ashad:~$ cat public_key.pem
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsAmvd2nMjKH2g+dgn2Yv
+F7EcJoNWGrtbtCZUirwHFaxY3WrVV73OzaBc0Kek3Fg8cbICuvPNPgSBDKA4T5UO
+hc9DwDD0TwwBMe01kfSiEIoa3T67GzWNFXFYK4dAorLGyv2lpKMoZu6r8wozLfcs
+x/EgW814di0ntQ+Y6dICKRQBwchfe4QXJ6Hi2flvkDiU9KSA3PpNGNklmrQc76IS
+hlGc6Ls7slPSskaMgryZ6Ruzi4ZE5zGltZymPRDpTQfAlRuCnQB+N8I6shN3T3ws
+15cjAJbc01602JSOK640c5d4fyxOqqbIwvlIobHTsCcoMn3fjlMBnaRWoE21ffTg
+YQIDAQAB
+-----END PUBLIC KEY-----
+Ashad:~$ echo 'This is a Secret message only for Ashad Nadeem' > secret.txt
+Ashad:~$ openssl rsautl -encrypt -pubin -inkey public_key.pem -in secret.txt -out secret.enc
+Ashad:~$ cat secret.enc
+/2▒m3</ќ/|FW]
+             /Xs▒▒[▒▒BE7▒▒w▒ak▒▒▒▒▒▒c▒}▒pC▒▒▒0▒P▒<
+▒$xoG▒▒▒▒C▒$▒▒▒{▒9▒▒A▒56▒v▒▒E▒7▒(▒KP▒0=e▒▒3▒iʐ▒e▒▒▒▒c8L▒o?U▒▒z-▒/k8m▒1▒D1▒▒▒M7ҋ▒=▒kz%T▒▒O▒▒$▒3▒B7                                                                                                    Ashad:~$ openssl rsautl -decrypt -inkey private_key.pem -in secret.enc                                                                                              This is a Secret message only for Ashad Nadeem
+Ashad:~$ openssl dgst -sha256 -sign private_key.pem -out secret.txt.sha256 secret.txt
+Ashad:~$ openssl dgst -sha256 -verify public_key.pem -signature secret.txt.sha256 secret.txt
+Verified OK
+Ashad:~$ openssl dgst -sha256 -verify public_key.pem -signature secret.txt.sha256 secret.txt
+Verified OK

@@ -1,0 +1,20 @@
+All the employees should use a strong password including uppercase,lowercase,speacial charachters and numbers. These passwords should be changed periodically over the year! 2-Factor Authentication system should be implemented with password and bio metric verification.
+
+Proper Network rules should be set-up which would only allow https:// websites to be browsed. Employees should be restricted to install any addons on their browser and Since they are making purchases they should enter there credit card information very carefully and should double check the website they are adding it to. After making purchase they should log off. 
+Proper network access rules should be set-up for employees within the network.
+
+VPN should be used to remotely access the company with 2-Factor authentication.
+
+Firewall should be setup in blacklist mode, where employees will make a list which websites they would need to use. The rest all the websites will be blocked! Another firewall rule should be set-up to not allow employees to download files from the internet since they could be malware! And there requirement is just to browse. Firewall should also block any removable media being plugged in without employee requesting it.
+Both Network and Host based Firewalls should be setup.
+WPA-2 Enterprise should be used as a wireless security as it is the most secured one yet since it usses AES encryption. The password for wifi should be strong consisting character from all the groups and it should be greater than 10 charachters with no dictionary words. 
+
+VLAN should be setup for individual group of employees having access to ressources only they would require, this would help in managing Network ACls more easily.
+
+Laptop harddisk should be encrypted with FDE so in the event of it getting stolen or lost customer confidential data is not lost! Escrow key should be setup aswell incase the employee forgets his password and is unable to access the harddisk.
+Application policy should be defined which would only allow certain softwares to install, ie softwares that are whitelisted. No such applications should be allowed to install if there vendor name is not included in the application policy. And only work or business related software should be allowed to install in the policy. If multiple application can do the tasks and there is an application which could perform all these tasks, this one application should be preferred as more application would open more doors to unknown vulnerabilities which potential hacker may exploit.
+All applications installed should be updated to the latest version so the bugs in previous version could be fixed.
+Privacy policies should be written clearly and should be implemented strictly. No customer information should be given out to an employee. Its access should be revoked. If it is of absolute necessary then employee should clearly explain that why he needs access to it and the explanation should be clear not vague. only a specific record should be given access to him for a short period of time. These measures would prevent the privacy of the customer and no employee can misuse it. Also company can keep log of it which employee access which information for what purpose.
+Employees should also not be able to access the packets or data of other employees this could be done through the use of a switch. Privacy should be taken seriously.
+A proper NIDS should be set-up aswell to monitor and log all the suspicious activities and alert them so in the case of an attack the detailed log would help company to protect it from such further attacks, and they can improve their security.
+A strong Intrusion Prevention System should also be setup to block the high level threat then and there so that no damage can be done.

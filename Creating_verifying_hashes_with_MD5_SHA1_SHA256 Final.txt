@@ -1,0 +1,44 @@
+Using username "student-02-5f80b7d48e70".
+Authenticating with public key "imported-openssh-key"
+Linux linux-instance 4.9.0-12-amd64 #1 SMP Debian 4.9.210-1 (2020-01-20) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Ashad:~$ echo 'Some Private Data just visible by authentic person' > file.txt    
+Ashad:~$ md5sum file.txt > file.txt.md5
+Ashad:~$ cat file.txt
+Some Private Data just visible by authentic person
+Ashad:~$ cat file.txt.md5
+fbb550bd34ee164d4e1fa31f5c69b426  file.txt
+Ashad:~$ md5 -c file.txt.md5
+-bash: md5: command not found
+Ashad:~$ md5sum -c file.txt.md5
+file.txt: OK
+Ashad:~$ cp file.txt badfile.txt
+Ashad:~$ md5sum badfile.txt > badfile.txt.md5
+Ashad:~$ cat badfile.txt.md5
+fbb550bd34ee164d4e1fa31f5c69b426  badfile.txt
+Ashad:~$ cat file.txt.md5
+fbb550bd34ee164d4e1fa31f5c69b426  file.txt
+Ashad:~$ nano badfile.txt
+Ashad:~$ md5sum -c badfile.txt.md5
+badfile.txt: FAILED
+md5sum: WARNING: 1 computed checksum did NOT match
+Ashad:~$ md5sum badfile.txt > new.badfile.txt.md5
+Ashad:~$ cat new.badfile.txt.md5
+c2fe274e4619a62cfad63bf0bc674dec  badfile.txt
+Ashad:~$ shasum file.txt > file.txt.sha1
+Ashad:~$ cat file.txt.sha1
+3bfdde54f61b55056c16d4927fae0d967d5b85ae  file.txt
+Ashad:~$ shasum -c file.txt.sha1
+file.txt: OK
+Ashad:~$ shasum -a 256 file.txt > file.txt.sha256
+Ashad:~$ cat file.txt.sha256
+e94ca6105d82adcb7236c6c4506f2405f32e2f33af7a86386f621203c1751081  file.txt
+Ashad:~$ shasum -c file.txt.sha256
+file.txt: OK
+Ashad:~$
